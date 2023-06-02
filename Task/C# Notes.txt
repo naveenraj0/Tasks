@@ -1,0 +1,55 @@
+Class:
+====		
+	//Class is a Datastructure in c# that Combines Data Variables and Function into a Single Unit.
+	//Collection Of object and Methods.
+
+Object:
+=====
+	//Runtime Memory Allocation.
+	//Helps to call Methods..
+
+Methods:
+=======
+	//Set of Action to be Performed.
+	//Business Logic will be Written Inside the Method.
+
+Inheritance:
+========
+	//The Concept in Oops in Which one class inherits the Attributes and Methods Of Another Class.
+
+
+Encapulation:
+=========
+	//An object's ability to hide data and behavior that are not necessary to its user. 
+
+Polymorphism:
+==========
+	//Describes situations in which something occurs in several different forms.
+	//Many Forms.
+
+Abstraction:
+========
+	// Only the required information is visible to the user and the rest of the information is hidden.
+
+Opps Concepts:
+==========
+	 abstraction, encapsulation, inheritance, and polymorphism.
+
+string[] args:
+========
+	//A variable that has all the values passed from the command line.
+
+MethodOverloading:
+=============
+	// Same method Different Arguments.
+
+Methodoverriding:
+============
+	//Same Method Same Arguments.
+
+Interface:
+======
+	//
+
+
+

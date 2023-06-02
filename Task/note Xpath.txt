@@ -1,0 +1,7 @@
+//div[text()='Excel Travels']//following::div[text()='View Seats'][1]
+//div[text()='MBT TRAVELS']//following::span[text()='Boarding & Dropping Points'][1]
+
+//li[@id='19455478']//child::span[text()='View Seats']
+//li[@id='19455478']//child::span[text()='Boarding & Dropping Points']
+
+//div[text()='Excel Travels']//following::div[text()='View Seats'][1]//following::span[text()='Boarding & Dropping Points'][1]

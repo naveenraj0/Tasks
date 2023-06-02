@@ -1,0 +1,184 @@
+using System;
+
+namespace Loop
+{
+	class WhileLoop                                                              OutPut:  Sum = 15
+	{
+		public static void Main(string[] args)
+		{
+			int i=1, sum=0;
+
+			while (i<=5)
+			{
+				sum += i;
+				i++;
+			}
+			Console.WriteLine("Sum = {0}", sum);
+		}
+	}
+}
+			    		//While Loop
+
+
+//	Iteration	
+==========
+		    		Iteration	Value of i	i<=5	Value of sum
+1	1	true	0+1 = 1
+2	2	true	1+2 = 3
+3	3	true	3+3 = 6
+4	4	true	6+4 = 10
+5	5	true	10+5 = 15
+6	6	false	Loop terminates
+So, the final value of sum will be 15.
+
+
+
+Do While:
+=====
+Syntax:
+do
+{
+	// body of do while loop
+} while (test-expression);
+
+Program:
+======
+
+using System;
+
+namespace Loop
+{
+	class DoWhileLoop
+	{
+		public static void Main(string[] args)
+		{
+			int i = 1, n = 5, product;
+
+			do
+			{
+				product = n * i;
+				Console.WriteLine("{0} * {1} = {2}", n, i, product);
+				i++;
+			} while (i <= 10);
+		}
+	}
+
+Output:
+=====
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+5 * 5 = 25
+5 * 6 = 30
+5 * 7 = 35
+5 * 8 = 40
+5 * 9 = 45
+5 * 10 = 50
+
+For Loop:
+======
+
+Syntax:
+=====
+for (initialization; condition; iterator)
+{
+	// body of for loop
+}
+
+Program:
+======
+using System;
+
+namespace Loop
+{
+	class ForLoop
+	{
+		public static void Main(string[] args)
+		{
+			for (int i=1; i<=5; i++)
+			{
+				Console.WriteLine("C# For Loop: Iteration {0}", i);
+			}
+		}
+	}	
+}
+
+Output:
+=====
+C# For Loop: Iteration 1
+C# For Loop: Iteration 2
+C# For Loop: Iteration 3
+C# For Loop: Iteration 4
+C# For Loop: Iteration 5
+
+Break Statement:
+===========
+using System;
+
+namespace CSharpBreak {
+  
+  class Program {
+    static void Main(string[] args) {
+
+      for (int i = 1; i <= 4; ++i) {
+        
+        // terminates the loop
+        if (i == 3) {
+          break; 
+        }
+            	
+        Console.WriteLine(i);
+      }
+      	 
+      Console.ReadLine();
+
+Break Statement Using In While Loop:
+========================
+using System;
+
+namespace WhileBreak {
+
+  class Program {
+    static void Main(string[] args) {
+      int i = 1;
+      while (i <= 5) {
+        Console.WriteLine(i);
+         i++;
+           if (i == 4) {
+             // terminates the loop
+             break; 
+           }
+      }
+      Console.ReadLine();
+    }
+  }
+}
+      
+For Each Loop:
+==========
+using System;
+
+namespace ForEachBreak {
+  class Program {
+    static void Main(string[] args) {
+      int[] num = { 1, 2, 3, 4, 5 };
+
+      // use of for each loop
+      foreach(int number in num) {
+
+        // terminates the loop
+         if(number==3) {
+           break; 
+           }
+
+      Console.WriteLine(number);
+        }
+    }
+  }
+}
+
+
+
+
+

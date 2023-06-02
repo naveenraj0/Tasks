@@ -1,0 +1,92 @@
+LOCATORS
+==========
+this.driver.FindElement(By.ClassName("className"));
+this.driver.FindElement(By.CssSelector("css"));
+this.driver.FindElement(By.Id("id"));
+this.driver.FindElement(By.LinkText("text"));
+this.driver.FindElement(By.Name("name"));
+this.driver.FindElement(By.PartialLinkText("pText"));
+this.driver.FindElement(By.TagName("input"));
+this.driver.FindElement(By.XPath("//*[@id='editor']"));
+// Find multiple elements
+IReadOnlyCollection<IWebElement> anchors =
+this.driver.FindElements(By.TagName("a"));
+// Search for an element inside another
+var div = this.driver.FindElement(By.TagName("div"))
+.FindElement(By.TagName("a"));
+
+Basic Browser operation
+===================
+// Navigate to a page
+this.driver.Navigate().GoToUrl(@"http://google.com");
+// Get the title of the page
+string title = this.driver.Title;
+// Get the current URL
+string url = this.driver.Url;
+// Get the current page HTML source
+string html = this.driver.PageSource;
+
+Basic Element Operation
+==================
+IWebElement element = driver.FindElement(By.Id("id"));
+element.Click();
+element.SendKeys("someText");
+element.Clear();
+element.Submit();
+string innerText = element.Text;
+bool isEnabled = element.Enabled;
+bool isDisplayed = element.Displayed;
+bool isSelected = element.Selected;
+IWebElement element = driver.FindElement(By.Id("id"));
+SelectElement select = new SelectElement(element);
+select.SelectByIndex(1);
+select.SelectByText("Ford");
+select.SelectByValue("ford");
+select.DeselectAll();
+select.DeselectByIndex(1);
+select.DeselectByText("Ford");
+select.DeselectByValue("ford");
+IWebElement selectedOption = select.SelectedOption;
+IList<IWebElement> allSelected = select.AllSelectedOptions;
+bool isMultipleSelect = select.IsMultiple;
+
+
+Advance Element Operation
+=====================
+// Drag and Drop
+IWebElement element = driver.FindElement(
+By.XPath("//*[@id='project']/p[1]/div/div[2]"));
+Actions move = new Actions(driver);
+move.DragAndDropToOffset(element, 30, 0).Perform();
+// How to check if an element is visible
+Assert.IsTrue(driver.FindElement(
+By.XPath("//*[@id='tve_editor']/div")).Displayed);
+// Upload a file
+IWebElement element =
+ driver.FindElement(By.Id("RadUpload1file0"));
+String filePath = @"D:\WebDriver.Series.Tests\\WebDriver.xml";
+element.SendKeys(filePath);
+// Scroll focus to control
+IWebElement link =
+driver.FindElement(By.PartialLinkText("Previous post"));
+string js = string.Format("window.scroll(0, {0});",
+ link.Location.Y);
+((IJavaScriptExecutor)driver).ExecuteScript(js);
+link.Click();
+// Taking an element screenshot
+IWebElement element =
+driver.FindElement(By.XPath("//*[@id='tve_editor']/div"));
+var cropArea = new Rectangle(element.Location, element.Size);
+var bitmap = bmpScreen.Clone(cropArea, bmpScreen.PixelFormat);
+bitmap.Save(fileName);
+// Focus on a control
+IWebElement link =
+driver.FindElement(By.PartialLinkText("Previous post"));
+// Wait for visibility of an element
+WebDriverWait wait = new WebDriverWait(driver,
+TimeSpan.FromSeconds(30));
+wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(
+By.XPath("//*[@id='tve_editor']/div[2]/div[2]/div/div")));
+
+
+
