@@ -1,0 +1,18 @@
+ internal class Program
+    {
+        static void Main(string[] args)
+        {
+            IWebDriver driver = new ChromeDriver();
+            driver.Navigate().GoToUrl("https://www.google.co.in/");
+            Screenshot googleScreenShot =((ITakesScreenshot)driver).GetScreenshot();
+
+            //C:\Users\navee\source\repos\screenshot\screenshot\
+            //   Directory.CreateDirectory(Directory.GetCurrentDirectory() + @"\     screenshot");
+            googleScreenShot.SaveAsFile("C:\\Users\\navee\\source\\repos\\screenshot\\screenshot\\Newton.PNG", ScreenshotImageFormat.Png);
+            driver.Quit();
+
+        }
+    }
+}
+
+			//ScreenShot
